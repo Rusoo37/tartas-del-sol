@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tartas del Sol</title>
+    
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+    <header>
+        <img src="/static/img/logo.png" alt="Logo Tartas del Sol" class="logo">
+        <h1>Tartas del Sol ☀️</h1>
+        <p>Tartas caseras y deliciosas</p>
+    </header>
+
+    <main class="container">
+        <div class="grid" id="catalogo-tartas">
+            
+            {{range .}}
+            <article class="card">
+                <img src="{{.Imagen}}" alt="Tarta de {{.Nombre}}" loading="lazy">
+                <div class="card-content">
+                    <h2 class="card-title">{{.Nombre}}</h2>
+                    <p class="descripcion">{{.Descripcion}}</p>
+                    
+                    <a href="https://wa.me/5492262309986?text={{.MensajeWP}}" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                        Pedir por WhatsApp
+                    </a>
+                </div>
+            </article>
+            {{end}}
+        </div>
+        <div class="extras-container">
+            {{template "extras"}}
+        </div>
+    </main>
+    <footer class="site-footer">
+        <p>&copy; 2026 Tartas del Sol. Todos los derechos reservados.</p>
+        <p class="developer-credit">Developed with 🧉 by Ruso</p>
+    </footer>
+</body>
+</html>
