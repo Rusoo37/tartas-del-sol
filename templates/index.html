@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tartas del Sol</title>
+    <title>Tartas del Sol 🥧 | Tandil</title>
     
+    <meta name="description" content="Pedí las mejores tartas artesanales y caseras en Tandil. Masa integral, ingredientes frescos, mucho relleno y listas para freezar. ¡Hacé tu pedido por WhatsApp!">
+
+    <meta property="og:title" content="Tartas del Sol 🥧 | Tandil">
+    <meta property="og:description" content="Mirá nuestro menú de tartas caseras y hacé tu pedido para hoy.">
+    <meta property="og:image" content="/static/img/porcion1.jpg"> 
+    <meta property="og:type" content="website">
+
     <script src="https://unpkg.com/htmx.org@1.9.10"></script>
     
     <link rel="stylesheet" href="/static/styles.css">
@@ -22,7 +29,7 @@
             
             {{range .}}
             <article class="card">
-                <img src="{{.Imagen}}" alt="Tarta de {{.Nombre}}" loading="lazy">
+                <img src="{{.Imagen}}" alt="Tarta de {{.Nombre}} en Tandil" loading="lazy">
                 <div class="card-content">
                     <h2 class="card-title">{{.Nombre}}</h2>
                     <p class="descripcion">{{.Descripcion}}</p>
