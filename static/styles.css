@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Days+One&family=Lora:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&display=swap');
 :root {
     /* Colores extraídos de tus flyers */
     --primary-naranja: #F79F1F; /* Color naranja vibrante */
@@ -5,6 +6,11 @@
     --bg-crema: #FFFCE0;        /* Fondo crema claro */
     --text-secondary: #555;     /* Color para las descripciones */
     --whatsapp-green: #25D366;  /* Color oficial de WhatsApp */
+    /* HEADER */
+    --color-marron: #3e2115; 
+    --color-dorado: #cfa15f;  
+    --color-crema: #f1ebd9; 
+    --color-blanco: #ffffff;
 }
 
 body {
@@ -16,22 +22,44 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, var(--primary-naranja) 0%, var(--primary-naranja) 60%, var(--primary-verde) 60%, var(--primary-verde) 100%);
+    background: linear-gradient(105deg, var(--primary-verde) 55%, var(--primary-naranja) 55%);
     color: white;
     text-align: center;
-    padding: 3rem 1rem;
+    padding: 2rem 0rem;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
-    box-shadow: 0 4px 12px rgba(56, 84, 59, 0.15);
+    box-shadow: 0 4px 7px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
 }
 .logo {
-    width: 160px; 
-    height: auto;
-    border-radius: 40%; 
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2); 
-    margin-bottom: 1rem; 
-    background-color: white; 
-    border: 4px solid white; 
+    width: 7rem; 
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
+.header-content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--bg-crema);
+}
+.title-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.subtitle-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 h1 {
     margin: 0;
@@ -40,13 +68,23 @@ h1 {
     font-weight: 900; 
     letter-spacing: 1px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.2); 
+    padding: 0;
+    font-family: "Oswald", sans-serif;
 }
-
+.divider {
+  height: 3.5rem;
+  width: 2px;
+  background-color: var(--color-marron);
+  opacity: 0.8; 
+}
 header p {
-    font-size: 1.2rem;
-    margin-top: 0.5rem;
+    font-size: 1.8rem;
     font-weight: 500;
     opacity: 0.9;
+    padding: 0;
+    margin: 0;
+    color: var(--color-marron);
+    font-family: "Days One", sans-serif;
 }
 
 .container {
@@ -74,6 +112,8 @@ header p {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid rgba(56, 84, 59, 0.1); 
 }
@@ -85,8 +125,8 @@ header p {
 
 .card img {
     width: 100%;
-    height: 240px;
-    object-fit: cover;
+    height: 400px;
+    max-height: 400px;
     background-color: #eee;
     border-bottom: 4px solid var(--primary-naranja); 
 }
@@ -111,6 +151,7 @@ header p {
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
     line-height: 1.6;
+    font-family: "Lora", serif;
 }
 
 .btn-whatsapp {
@@ -200,7 +241,7 @@ header p {
 
 /* --- Contenedor del Video --- */
 .video-container { 
-    max-width: 600px; 
+    width: 50%; 
     margin: 0 auto; 
     background: white; 
     padding: 1.5rem; 
@@ -210,7 +251,7 @@ header p {
 }
 
 .video-container video { 
-    width: 100%; 
+    width: 50%; 
     border-radius: 12px; 
     background: #000; /* Fondo negro mientras carga el video */
 }
@@ -289,4 +330,23 @@ header p {
 /* Un pequeño efecto para que brille cuando le pasan el mouse por arriba */
 .developer-credit:hover {
     opacity: 1;
+}
+@media screen and (max-width: 768px) {
+    header{
+        flex-direction: column;
+        padding: 1.5rem 0.5rem;
+    }
+    .header-content {
+        flex-direction: column;
+        justify-content: center;
+        color: var(--bg-crema);
+    }
+    .logo{
+        position: static;
+        transform: none;
+        margin-bottom: 1rem;
+    }
+    header p {
+        color: var(--bg-crema);
+    }
 }
