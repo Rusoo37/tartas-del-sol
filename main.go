@@ -7,15 +7,16 @@ import (
 	"net/http"
 	"net/url"
 	"os"
+	"strings" // <-- ¡No te olvides de agregar este import!
 )
 
-// Uso etiquetas para saber como mapear el json a la estructura de Go
 type Tarta struct {
 	Nombre      string `json:"nombre"`
 	Descripcion string `json:"descripcion"`
 	Masa        string `json:"masa"`
 	Imagen      string `json:"imagen"`
 	MensajeWP   string `json:"mensajeWP"`
+	URLSegura   template.URL
 }
 
 func main() {
@@ -33,7 +34,15 @@ func main() {
 
 	// 2. Codificamos los mensajes de WhatsApp para que las URLs sean válidas
 	for i := range tartas {
-		tartas[i].MensajeWP = url.QueryEscape(tartas[i].MensajeWP)
+		// A. Codificamos el texto (esto pone los '+')
+		textoCodificado := url.QueryEscape(tartas[i].MensajeWP)
+
+		// B. Reemplazamos todos los '+' por '%20'
+		textoParaWP := strings.ReplaceAll(textoCodificado, "+", "%20")
+
+		// C. Armamos el link completo de WhatsApp y lo guardamos como URL segura
+		linkCompleto := "https://wa.me/5492262309986?text=" + textoParaWP
+		tartas[i].URLSegura = template.URL(linkCompleto)
 	}
 
 	// 3. Servir archivos estáticos (CSS, imágenes)
