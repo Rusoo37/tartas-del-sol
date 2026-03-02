@@ -1,92 +1,107 @@
 [
   {
     "nombre": "Pollo y Calabaza",
-    "descripcion": "Pollo, calabaza, cebolla y queso. Elegí tu masa: Integral o Tradicional.",
-    "imagen": "/static/img/pollo-calabaza.jpg",
+    "descripcion": "Pollo, calabaza, cebolla y queso.",
+    "masa": "Integral o Tradicional",
+    "imagen": "/static/img/pollo-calabaza.webp",
     "mensajeWP": "Hola! Quiero encargar una tarta de Pollo, calabaza, cebolla y queso"
   },
   {
     "nombre": "Pollo y Puerro",
-    "descripcion": "Pollo, puerro, cebolla y queso. Elegí tu masa: Integral o Tradicional.",
-    "imagen": "/static/img/pollo-puerro.jpg",
+    "descripcion": "Pollo, puerro, cebolla y queso.",
+    "masa": "Integral o Tradicional",
+    "imagen": "/static/img/pollo-puerro.webp",
     "mensajeWP": "Hola! Quiero encargar una tarta de Pollo, puerro, cebolla y queso"
   },
   {
     "nombre": "Zapallito",
-    "descripcion": "Zapallito, cebolla y queso. Elegí tu masa: Integral o Tradicional.",
-    "imagen": "/static/img/zapallito.jpg",
+    "descripcion": "Zapallito, cebolla y queso.",
+    "masa": "Integral o Tradicional",
+    "imagen": "/static/img/zapallito.webp",
     "mensajeWP": "Hola! Quiero encargar una tarta de Zapallito, cebolla y queso"
   },
   {
     "nombre": "Jamón y Queso",
-    "descripcion": "Jamón y queso. Elegí tu masa: Integral o Tradicional.",
-    "imagen": "/static/img/jamon-queso.jpg",
+    "descripcion": "Jamón y queso.",
+    "masa": "Integral o Tradicional",
+    "imagen": "/static/img/jamon-queso.webp",
     "mensajeWP": "Hola! Quiero encargar una tarta de Jamón y Queso"
   },
   {
     "nombre": "Berenjena",
-    "descripcion": "Berenjena, cebolla y queso. Elegí tu masa: Integral o Tradicional.",
-    "imagen": "/static/img/berenjena.jpg",
+    "descripcion": "Berenjena, cebolla y queso.",
+    "masa": "Integral o Tradicional",
+    "imagen": "/static/img/berenjena.webp",
     "mensajeWP": "Hola! Quiero encargar una tarta de Berenjena, cebolla y queso"
   },
   {
     "nombre": "Brócoli",
-    "descripcion": "Brócoli, cebolla y queso. Elegí tu masa: Integral o Tradicional.",
-    "imagen": "/static/img/brocoli.jpg",
+    "descripcion": "Brócoli, cebolla y queso.",
+    "masa": "Integral o Tradicional",
+    "imagen": "/static/img/brocoli.webp",
     "mensajeWP": "Hola! Quiero encargar una tarta de Brócoli, cebolla y queso"
   },
   {
     "nombre": "Pollo y Batata",
-    "descripcion": "Pollo, batata, cebolla y queso. Elegí tu masa: Integral o Tradicional.",
-    "imagen": "/static/img/pollo-batata.jpg",
+    "descripcion": "Pollo, batata, cebolla y queso.",
+    "masa": "Integral o Tradicional",
+    "imagen": "/static/img/pollo-batata.webp",
     "mensajeWP": "Hola! Quiero encargar una tarta de Pollo, batata, cebolla y queso"
   },
   {
     "nombre": "Pollo y Vegetales",
-    "descripcion": "Pollo, vegetales y queso. Elegí tu masa: Integral o Tradicional.",
-    "imagen": "/static/img/pollo-vegetales.jpg",
+    "descripcion": "Pollo, vegetales y queso.",
+    "masa": "Integral o Tradicional",
+    "imagen": "/static/img/pollo-vegetales.webp",
     "mensajeWP": "Hola! Quiero encargar una tarta de Pollo, vegetales y queso"
   },
   {
     "nombre": "Zucchini y Berenjena",
-    "descripcion": "Zucchini, berenjena, cebolla, morrón y queso. Elegí tu masa: Integral o Tradicional.",
-    "imagen": "/static/img/zucchini-berenjena.jpg",
+    "descripcion": "Zucchini, berenjena, cebolla, morrón y queso.",
+    "masa": "Integral o Tradicional",
+    "imagen": "/static/img/zucchini-berenjena.webp",
     "mensajeWP": "Hola! Quiero encargar una tarta de Zucchini, berenjena, cebolla, morrón y queso"
   },
   {
     "nombre": "Pollo y Brócoli",
-    "descripcion": "Pollo, brócoli, cebolla y queso. Elegí tu masa: Integral o Tradicional.",
-    "imagen": "/static/img/pollo-brocoli.jpg",
+    "descripcion": "Pollo, brócoli, cebolla y queso.",
+    "masa": "Integral o Tradicional",
+    "imagen": "/static/img/pollo-brocoli.webp",
     "mensajeWP": "Hola! Quiero encargar una tarta de Pollo, brócoli, cebolla y queso"
   },
   {
     "nombre": "Puerro",
-    "descripcion": "Puerro, cebolla y queso. Elegí tu masa: Integral o Tradicional.",
-    "imagen": "/static/img/puerro.jpg",
+    "descripcion": "Puerro, cebolla y queso.",
+    "masa": "Integral o Tradicional",
+    "imagen": "/static/img/puerro.webp",
     "mensajeWP": "Hola! Quiero encargar una tarta de Puerro, cebolla y queso"
   },
   {
     "nombre": "Choclo",
-    "descripcion": "Choclo, cebolla y queso. Elegí tu masa: Integral o Tradicional.",
-    "imagen": "/static/img/choclo.jpg",
+    "descripcion": "Choclo, cebolla y queso.",
+    "masa": "Integral o Tradicional",
+    "imagen": "/static/img/choclo.webp",
     "mensajeWP": "Hola! Quiero encargar una tarta de Choclo, cebolla y queso"
   },
   {
     "nombre": "Brócoli y Choclo",
-    "descripcion": "Brócoli, choclo, cebolla y queso. Elegí tu masa: Integral o Tradicional.",
-    "imagen": "/static/img/brocoli-choclo.jpg",
+    "descripcion": "Brócoli, choclo, cebolla y queso.",
+    "masa": "Integral o Tradicional",
+    "imagen": "/static/img/brocoli-choclo.webp",
     "mensajeWP": "Hola! Quiero encargar una tarta de Brócoli, choclo, cebolla y queso"
   },
   {
     "nombre": "Calabaza y Choclo",
-    "descripcion": "Calabaza, choclo, cebolla y queso. Elegí tu masa: Integral o Tradicional.",
-    "imagen": "/static/img/calabaza-choclo.jpg",
+    "descripcion": "Calabaza, choclo, cebolla y queso.",
+    "masa": "Integral o Tradicional",
+    "imagen": "/static/img/calabaza-choclo.webp",
     "mensajeWP": "Hola! Quiero encargar una tarta de Calabaza, choclo, cebolla y queso"
   },
   {
     "nombre": "Zapallito y Choclo",
-    "descripcion": "Zapallito, choclo, cebolla y queso. Elegí tu masa: Integral o Tradicional.",
-    "imagen": "/static/img/zapallito-choclo.jpg",
+    "descripcion": "Zapallito, choclo, cebolla y queso.",
+    "masa": "Integral o Tradicional",
+    "imagen": "/static/img/zapallito-choclo.webp",
     "mensajeWP": "Hola! Quiero encargar una tarta de Zapallito, choclo, cebolla y queso"
   }
 ]

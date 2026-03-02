@@ -13,6 +13,7 @@ import (
 type Tarta struct {
 	Nombre      string `json:"nombre"`
 	Descripcion string `json:"descripcion"`
+	Masa        string `json:"masa"`
 	Imagen      string `json:"imagen"`
 	MensajeWP   string `json:"mensajeWP"`
 }

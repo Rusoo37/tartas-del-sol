@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tartas del Sol | Tandil</title>
-    
+    <link rel="icon" href="/static/img/logo.png" type="image/png">
     <meta name="description" content="Pedí las mejores tartas artesanales y caseras en Tandil. Masa integral, ingredientes frescos, mucho relleno y listas para freezar. ¡Hacé tu pedido por WhatsApp!">
 
     <meta property="og:title" content="Tartas del Sol | Tandil">
@@ -19,7 +19,7 @@
 <body>
 
     <header class="header-premium">
-        <img src="/static/img/logo.png" alt="Logo Tartas del Sol" class="logo">
+        <img src="/static/img/logo.png" alt="Logo-Tartas-del-Sol Tartas-del-sol Tandil" class="logo">
         <div class="header-content">
             <div class="title-container">
                 <h1 class="title">TARTAS DEL SOL</h1>
@@ -36,10 +36,13 @@
             
             {{range .}}
             <article class="card">
-                <img src="{{.Imagen}}" alt="Tarta de {{.Nombre}} en Tandil" loading="lazy">
+                <div class="card-image">
+                    <img src="{{.Imagen}}" alt="Tarta-de-{{.Nombre}}-en-Tandil Tartas-del-sol Tandil" loading="lazy">
+                </div>
                 <div class="card-content">
                     <h2 class="card-title">{{.Nombre}}</h2>
                     <p class="descripcion">{{.Descripcion}}</p>
+                    <p class="masa">Opción de masa: {{.Masa}}</p>
                     
                     <a href="https://wa.me/5492262309986?text={{.MensajeWP}}" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
                         Pedir por WhatsApp
