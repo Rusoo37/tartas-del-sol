@@ -59,7 +59,7 @@
     "nombre": "Zucchini y Berenjena",
     "descripcion": "Zucchini, berenjena, cebolla, morrón y queso.",
     "masa": "Integral o Tradicional",
-    "imagen": "/static/img/zucchini-berenjena.webp",
+    "imagen": "/static/img/verduras.webp",
     "mensajeWP": "Hola! Quiero encargar una tarta de Zucchini, berenjena, cebolla, morrón y queso"
   },
   {
