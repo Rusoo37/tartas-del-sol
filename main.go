@@ -7,10 +7,11 @@ import (
 	"net/http"
 	"net/url"
 	"os"
-	"strings" // <-- ¡No te olvides de agregar este import!
+	"strings"
 )
 
-type Tarta struct {
+// Renombramos "Tarta" a "Producto" porque ahora también incluye Wraps
+type Producto struct {
 	Nombre      string `json:"nombre"`
 	Descripcion string `json:"descripcion"`
 	Masa        string `json:"masa"`
@@ -19,48 +20,67 @@ type Tarta struct {
 	URLSegura   template.URL
 }
 
+// Nueva estructura para agrupar el menú completo
+type Menu struct {
+	Grandes      []Producto `json:"grandes"`
+	Individuales []Producto `json:"individuales"`
+	Wraps        []Producto `json:"wraps"`
+}
+
+// Función auxiliar para no repetir código al generar los links
+func generarLinksWP(productos []Producto) {
+	for i := range productos {
+		textoCodificado := url.QueryEscape(productos[i].MensajeWP)
+		textoParaWP := strings.ReplaceAll(textoCodificado, "+", "%20")
+		linkCompleto := "https://wa.me/5492262309986?text=" + textoParaWP
+		productos[i].URLSegura = template.URL(linkCompleto)
+	}
+}
+
 func main() {
-	// 1. Leo el archivo JSON con la información de las tartas
+	// 1. Leo el archivo JSON (ahora debería tener la estructura dividida)
 	file, err := os.ReadFile("tartas.json")
 	if err != nil {
 		log.Fatal("Error al leer tartas.json: ", err)
 	}
 
-	var tartas []Tarta
-	err = json.Unmarshal(file, &tartas)
+	var menu Menu
+	err = json.Unmarshal(file, &menu)
 	if err != nil {
 		log.Fatal("Error al parsear el JSON: ", err)
 	}
 
-	// 2. Codificamos los mensajes de WhatsApp para que las URLs sean válidas
-	for i := range tartas {
-		// A. Codificamos el texto (esto pone los '+')
-		textoCodificado := url.QueryEscape(tartas[i].MensajeWP)
+	// 2. Codificamos los mensajes de WhatsApp para cada categoría
+	generarLinksWP(menu.Grandes)
+	generarLinksWP(menu.Individuales)
+	generarLinksWP(menu.Wraps)
 
-		// B. Reemplazamos todos los '+' por '%20'
-		textoParaWP := strings.ReplaceAll(textoCodificado, "+", "%20")
-
-		// C. Armamos el link completo de WhatsApp y lo guardamos como URL segura
-		linkCompleto := "https://wa.me/5492262309986?text=" + textoParaWP
-		tartas[i].URLSegura = template.URL(linkCompleto)
-	}
-
-	// 3. Servir archivos estáticos (CSS, imágenes)
+	// 3. Servir archivos estáticos
 	fs := http.FileServer(http.Dir("./static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
-	// 4. Ruta principal
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		tmpl, err := template.ParseGlob("templates/*.html")
-		if err != nil {
-			http.Error(w, "Error al cargar las plantillas", http.StatusInternalServerError)
-			return
-		}
+	// Cargamos TODAS las plantillas una sola vez
+	tmpl, err := template.ParseGlob("templates/*.html")
+	if err != nil {
+		log.Fatal("Error al cargar las plantillas: ", err)
+	}
 
-		err = tmpl.ExecuteTemplate(w, "index.html", tartas)
-		if err != nil {
-			http.Error(w, "Error al renderizar", http.StatusInternalServerError)
-		}
+	// Ruta principal (carga toda la página entera)
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		tmpl.ExecuteTemplate(w, "index.html", menu)
+	})
+
+	// --- RUTAS HTMX (solo devuelven el fragmento de código) ---
+	http.HandleFunc("/grandes", func(w http.ResponseWriter, r *http.Request) {
+		tmpl.ExecuteTemplate(w, "grandes", menu.Grandes)
+	})
+
+	http.HandleFunc("/individuales", func(w http.ResponseWriter, r *http.Request) {
+		tmpl.ExecuteTemplate(w, "individuales", menu.Individuales)
+	})
+
+	http.HandleFunc("/wraps", func(w http.ResponseWriter, r *http.Request) {
+		tmpl.ExecuteTemplate(w, "wraps", menu.Wraps)
 	})
 
 	log.Println("Servidor de Tartas del Sol corriendo en http://localhost:8080")

@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tartas del Sol | Tandil</title>
-    <link rel="icon" href="/static/img/logo.png" type="image/png">
+    <title>Casa del Sol | Tandil</title>
+    <link rel="icon" href="/static/img/logo.webp" type="image/png">
     <meta name="description" content="Pedí las mejores tartas artesanales y caseras en Tandil. Masa integral, ingredientes frescos, mucho relleno y listas para freezar. ¡Hacé tu pedido por WhatsApp!">
 
-    <meta property="og:title" content="Tartas del Sol | Tandil">
+    <meta property="og:title" content="Casa del Sol | Tandil">
     <meta property="og:description" content="Mirá nuestro menú de tartas caseras y hacé tu pedido para hoy.">
     <meta property="og:image" content="/static/img/porcion1.jpg"> 
     <meta property="og:type" content="website">
@@ -19,45 +19,44 @@
 <body>
 
     <header class="header-premium">
-        <img src="/static/img/logo.png" alt="Logo-Tartas-del-Sol Tartas-del-sol Tandil" class="logo">
-        <div class="header-content">
-            <div class="title-container">
-                <h1 class="title">TARTAS DEL SOL</h1>
+        <a href="/"><img src="/static/img/logo.webp" alt="Logo-Casa-del-Sol Casa-del-sol Tandil" class="logo"></a>
+        <!-- <div class="header-content">
+             <div class="title-container">
+                <h1 class="title">CASA DEL SOL</h1>
             </div>
-            <!-- <span class="divider"></span> -->
-             <div class="subtitle-container">
-                 <p class="subtitle">Tartas caseras y deliciosas 🥧</p>
+              <div class="subtitle-container">
+                 <p class="subtitle">Tartas y Wraps Artesanales</p>
+            </div> -->
+            <div class="subtitle-container">
+                <p>Nosotros la abundancia. Vos el momento</p>
             </div>
-        </div>
+        </div> 
     </header>
 
+    <nav class="nav-categorias" hx-on:click="
+        if(event.target.classList.contains('nav-btn')) {
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('activo'));
+            event.target.classList.add('activo');
+        }
+    ">
+        <button hx-get="/grandes" hx-target="#catalogo-contenido" class="nav-btn activo">Tartas Grandes</button>
+        <button hx-get="/individuales" hx-target="#catalogo-contenido" class="nav-btn">Individuales</button>
+        <button hx-get="/wraps" hx-target="#catalogo-contenido" class="nav-btn">Wraps</button>
+    </nav>
+
     <main class="container">
-        <div class="grid" id="catalogo-tartas">
-            
-            {{range .}}
-            <article class="card">
-                <div class="card-image">
-                    <img src="{{.Imagen}}" alt="Tarta-de-{{.Nombre}}-en-Tandil Tartas-del-sol Tandil" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <h2 class="card-title">{{.Nombre}}</h2>
-                    <p class="descripcion">{{.Descripcion}}</p>
-                    <p class="masa">Opción de masa: {{.Masa}}</p>
-                    <p class="individual">Disponible en tamaño individual 🥧</p>
-                    <a href="{{.URLSegura}}" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
-                        Pedir por WhatsApp
-                    </a>
-                </div>
-            </article>
-            {{end}}
+        <div class="catalogo-contenido" id="catalogo-contenido">
+            {{template "grandes" .Grandes}}
         </div>
+
         <div class="extras-container">
             {{template "extras"}}
         </div>
     </main>
     <footer class="site-footer">
-        <p>&copy; 2026 Tartas del Sol. Todos los derechos reservados.</p>
-        <p class="developer-credit">Developed with 🧉 by Ruso</p>
+        <p>&copy; 2026 Casa del Sol | Todos los derechos reservados.</p>
+        <p class="developer-credit">Developed by Ruso</p>
     </footer>
+    <script src="/static/app.js"></script>
 </body>
 </html>

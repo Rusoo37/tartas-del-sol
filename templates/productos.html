@@ -1,0 +1,56 @@
+{{define "grandes"}}
+<div class="seccion-productos fade-in">
+    <h2 class="titulo-seccion">Tartas Familiares</h2>
+    <div class="grid">
+        {{range .}}
+        <article class="card">
+            <div class="card-image"><img src="{{.Imagen}}" alt="{{.Nombre}}" loading="lazy"></div>
+            <div class="card-content">
+                <h2 class="card-title">{{.Nombre}}</h2>
+                <p class="descripcion">{{.Descripcion}}</p>
+                <p class="masa">Opción de masa: {{.Masa}}</p>
+                <a href="{{.URLSegura}}" class="btn-whatsapp" target="_blank">Pedir por WhatsApp</a>
+            </div>
+        </article>
+        {{end}}
+    </div>
+</div>
+{{end}}
+
+{{define "individuales"}}
+<div class="seccion-productos fade-in">
+    <h2 class="titulo-seccion">Tartas Individuales</h2>
+    <div class="grid">
+        {{range .}}
+        <article class="card">
+            <div class="card-image"><img src="{{.Imagen}}" alt="{{.Nombre}}" loading="lazy"></div>
+            <div class="card-content">
+                <h2 class="card-title">{{.Nombre}}</h2>
+                <p class="descripcion">{{.Descripcion}}</p>
+                <p class="masa">Opción de masa: {{.Masa}}</p>
+                <a href="{{.URLSegura}}" class="btn-whatsapp" target="_blank">Pedir por WhatsApp</a>
+            </div>
+        </article>
+        {{end}}
+    </div>
+</div>
+{{end}}
+
+{{define "wraps"}}
+<div class="seccion-productos fade-in">
+    <h2 class="titulo-seccion">Wraps Frescos</h2>
+    <div class="grid-2">
+        {{range .}}
+        <article class="card">
+            <div class="card-image"><img src="{{.Imagen}}" alt="{{.Nombre}}" loading="lazy"></div>
+            <div class="card-content">
+                <h2 class="card-title">{{.Nombre}}</h2>
+                <p class="descripcion">{{.Descripcion}}</p>
+                <p class="masa">Tortilla: {{.Masa}}</p>
+                <a href="{{.URLSegura}}" class="btn-whatsapp" target="_blank">Pedir por WhatsApp</a>
+            </div>
+        </article>
+        {{end}}
+    </div>
+</div>
+{{end}}
