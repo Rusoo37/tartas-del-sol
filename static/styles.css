@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Days+One&family=Lora:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+/* 
+font-family: "Playfair Display", serif;
+font-family: "Cormorant Garamond", serif;
+font-family: "Libre Baskerville", serif;
+font-family: "Montserrat", sans-serif;
+*/
 :root {
     /* COLORES PRINCIPALES */
     --bg-crema: #FDFBF7;        /* Blanco roto/crema ultra sutil para el fondo de la web */
@@ -39,14 +45,16 @@ header {
     width: 100%;
     height: 10rem;
     position: relative;
-
+}
+h2{
+    font-family: "Cormorant Garamond", serif;
 }
 /* --- NAVEGACIÓN DE CATEGORÍAS --- */
 .nav-categorias {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2.5rem; 
+    gap: 3.5rem; 
     padding: 1rem 1rem; 
     background-color: var(--bg-crema);
     position: sticky; 
@@ -62,9 +70,9 @@ header {
     border: none;
     text-decoration: none;
     font-weight: 700;
-    font-family: "Oswald", sans-serif;
+    font-family: "Cormorant Garamond", serif;
     text-transform: uppercase;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     letter-spacing: 0.5px;
     cursor: pointer;
     position: relative; 
@@ -107,33 +115,54 @@ header {
     left: 3rem;
     transform: translateY(-50%);
 }
-.header-content {
-    width: 100%;
+.header-null{
+    width: 50%;
+    height: 0px;
+    background-color: #c6abab;
+}
+.header-container {
+    width: 50%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: var(--bg-crema);
 }
-.title-container {
-    width: 40%;
+.titulo-container{
+    width: 100%;
     display: flex;
     justify-content: right;
+    align-items: center;
+    padding-right: 8rem;
 }
-.subtitle-container {
-    width: 80%;
+.subtitulo-container{
+    width: 100%;
     display: flex;
     justify-content: right;
+    align-items: center;
+    padding-right: 8rem;
+}
+.subtitulo-container p{
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.9;
+    padding: 0;
+    margin: 0;
+    letter-spacing: 0.1px;
+    color: var(--bg-crema);
+    font-family: "Montserrat", sans-serif;
 }
 h1 {
     margin: 0;
-    font-size: 2.5rem;
     text-transform: uppercase; 
-    font-weight: 900; 
     letter-spacing: 1px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.2); 
     padding: 0;
-    font-family: "Oswald", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 500; 
+    font-style: normal;
+    /* font-family: "Playfair Display", serif; */
+    font-family: "Cormorant Garamond", serif;
 }
 .divider {
   height: 3.5rem;
@@ -148,7 +177,7 @@ header p {
     padding: 0;
     margin: 0;
     color: var(--color-blanco);
-    font-family: "Days One", sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
 .container {
@@ -241,6 +270,7 @@ header p {
 .card-image img {
     width: 100%;
     height: 100%;
+    object-fit: contain;
 }
 
 .card-content {
@@ -258,6 +288,7 @@ header p {
 .card-content p {
     margin: 0;
     padding: 0;
+    font-family: "Montserrat", sans-serif;
 }
 
 .card-title {
@@ -265,16 +296,16 @@ header p {
     font-size: 1.3rem; 
     color: var(--primary-verde); 
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 0.5px;
-    font-family: "Oswald", sans-serif;
+    font-family: "Cormorant Garamond", serif;
 }
 
 .descripcion {
     color: var(--text-secondary); 
     margin: 0 0 1.5rem 0; 
     line-height: 1.6;
-    font-family: "Lora", serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 1rem;
     font-weight: 400;
 }
@@ -294,6 +325,7 @@ header p {
     font-size: 1rem;
     margin-top: auto; 
     transition: all 0.3s ease;
+    font-family: "Montserrat", sans-serif;
 }
 
 .btn-whatsapp:hover {
@@ -334,14 +366,6 @@ header p {
 .seccion-extra { 
     margin-bottom: 4rem; 
     text-align: center; 
-}
-
-.titulo-seccion { 
-    color: var(--primary-verde); 
-    font-size: 2rem; 
-    text-transform: uppercase; 
-    margin-bottom: 2rem;
-    font-weight: 800;
 }
 
 /* --- Galería de porciones --- */
@@ -389,6 +413,7 @@ header p {
     color: var(--text-secondary); 
     font-weight: 500;
     font-size: 1.1rem;
+    font-family: "Montserrat", sans-serif;
 }
 
 /* --- Testimonios --- */
@@ -469,11 +494,24 @@ header p {
     header{
         flex-direction: column;
         padding: 1.5rem 0rem;
+        height: auto;
     }
-    .header-content {
-        flex-direction: column;
+    .header-null {
+        display: none;
+    }
+    .header-container {
+        width: 100%;
+        display: flex;
         justify-content: center;
-        color: var(--bg-crema);
+        align-items: center;
+    }
+    .titulo-container {
+        justify-content: center;
+        padding: 0;
+    }
+    .subtitulo-container {
+        justify-content: center;
+        padding: 0;
     }
     .logo{
         position: static;

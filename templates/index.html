@@ -14,22 +14,21 @@
 
     <script src="https://unpkg.com/htmx.org@1.9.10"></script>
     
-    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="/static/styles.css?v=123">
 </head>
 <body>
 
     <header class="header-premium">
         <a href="/"><img src="/static/img/logo.webp" alt="Logo-Casa-del-Sol Casa-del-sol Tandil" class="logo"></a>
-        <!-- <div class="header-content">
-             <div class="title-container">
-                <h1 class="title">CASA DEL SOL</h1>
+        <div class="header-null"></div>
+        <div class="header-container">
+            <div class="titulo-container">
+                <h1>TARTAS & WRAPS</h1>
             </div>
-              <div class="subtitle-container">
-                 <p class="subtitle">Tartas y Wraps Artesanales</p>
-            </div> -->
-            <div class="subtitle-container">
-                <p>Nosotros la abundancia. Vos el momento</p>
+            <div class="subtitulo-container">
+                <p>Nosotros la abundancia. Vos el momento.</p>
             </div>
+        </div>
         </div> 
     </header>
 
@@ -40,7 +39,7 @@
         }
     ">
         <button hx-get="/grandes" hx-target="#catalogo-contenido" class="nav-btn activo">Tartas Grandes</button>
-        <button hx-get="/individuales" hx-target="#catalogo-contenido" class="nav-btn">Individuales</button>
+        <button hx-get="/individuales" hx-target="#catalogo-contenido" class="nav-btn">Tartas Individuales</button>
         <button hx-get="/wraps" hx-target="#catalogo-contenido" class="nav-btn">Wraps</button>
     </nav>
 
