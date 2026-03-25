@@ -469,8 +469,10 @@ header p {
     padding: 0.5rem 0;
 }
 .container-redes {
+    width: 100%;
+    height: auto;
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
     gap: 1.5rem;
     padding-right: 1.5rem;
@@ -483,8 +485,8 @@ header p {
     align-items: center;
 }
 .pre-footer-img {
-    width: 1.5rem;
-    max-width: 1.rem;
+    width: 24px;
+    max-width: 24px;
     padding: 0;
     margin: 0;
 }
