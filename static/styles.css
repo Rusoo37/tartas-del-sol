@@ -459,13 +459,35 @@ header p {
 
 /* FOOTER */
 
+.pre-footer{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    border-top: 1px solid rgba(56, 84, 59, 0.1);
+    padding: 0.5rem 0;
+}
+.container-redes {
+    display: flex;
+    gap: 1.5rem;
+    padding-right: 1.5rem;
+}
+.pre-footer a {
+    margin: 0;
+    padding: 0;
+}
+.pre-footer-img {
+    width: 1.5rem;
+    padding: 0;
+    margin: 0;
+}
+
 .site-footer {
     text-align: center;
     padding: 3rem 1rem 1.5rem 1rem;
-    margin-top: 2rem;
     color: var(--text-secondary);
     font-size: 0.9rem;
-    border-top: 1px solid rgba(56, 84, 59, 0.1); /* Línea verde muy transparente */
+    border-top: 1px solid rgba(56, 84, 59, 0.1); 
 }
 
 .site-footer p {
