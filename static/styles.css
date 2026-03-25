@@ -461,6 +461,7 @@ header p {
 
 .pre-footer{
     width: 100%;
+    height: 1.5rem;
     display: flex;
     justify-content: right;
     align-items: center;
@@ -469,15 +470,21 @@ header p {
 }
 .container-redes {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 1.5rem;
     padding-right: 1.5rem;
 }
 .pre-footer a {
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .pre-footer-img {
     width: 1.5rem;
+    max-width: 1.rem;
     padding: 0;
     margin: 0;
 }
